@@ -8,6 +8,8 @@
 [![npm downloads](https://img.shields.io/npm/dm/fast-sort-lens.svg?style=flat-square)](https://www.npmjs.com/package/fast-sort-lens)
 [![npm license](https://img.shields.io/npm/l/fast-sort-lens.svg?style=flat-square)](http://magicdawn.mit-license.org)
 
+<img src="https://github.com/magicdawn/fast-sort-lens/assets/4067115/bf686315-1c51-4da0-9dee-3c591a2c52ab" width="700" />
+
 ## Install
 
 ```sh
