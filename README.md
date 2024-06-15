@@ -16,8 +16,8 @@ $ pnpm add fast-sort-lens
 
 ## API
 
-```js
-const fastSortLens = require('fast-sort-lens');
+```ts
+import { fastOrderBy, fastSortWithOrders } from 'fast-sort-lens'
 ```
 
 ## Changelog
