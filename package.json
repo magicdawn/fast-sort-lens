@@ -2,7 +2,20 @@
   "name": "fast-sort-lens",
   "version": "0.0.1",
   "description": "API wrapper around fast-sort",
-  "main": "index.js",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "test": "vitest run",
     "prepare": "husky",
