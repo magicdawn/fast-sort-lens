@@ -1,9 +1,8 @@
-export { finderSort } from '@magicdawn/finder-sort'
 export { sort } from 'fast-sort'
 
 import { sort } from 'fast-sort'
 
-type OrderBy<T> = {
+export type OrderBy<T> = {
   prop: keyof T | ((it: T) => any)
   order: 'asc' | 'desc' | ((a: any, b: any) => number)
 }

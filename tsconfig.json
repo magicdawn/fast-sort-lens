@@ -9,7 +9,7 @@
     "resolveJsonModule": true,
     "target": "ES2020",
     "module": "CommonJS",
-    "strictNullChecks": true,
+    "strict": true,
     "skipLibCheck": true
   },
   "ts-node": {
