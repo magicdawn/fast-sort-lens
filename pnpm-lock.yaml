@@ -7,6 +7,13 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@magicdawn/finder-sort':
+        specifier: ^0.3.4
+        version: 0.3.4
+      fast-sort:
+        specifier: ^3.4.0
+        version: 3.4.0
     devDependencies:
       '@magicdawn/prettier-config':
         specifier: ^0.0.3
@@ -261,6 +268,9 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
+
+  '@magicdawn/finder-sort@0.3.4':
+    resolution: {integrity: sha512-pwKP55JeHzfEU8g4tuCNeENa8NJEslOUQjCRXW9bTgLwYikLrO0SinBFC81t960NWnvDAu41gaIgZJWxRdCn8Q==}
 
   '@magicdawn/prettier-config@0.0.3':
     resolution: {integrity: sha512-RxS+w5SPijz/RMltGBdJsKRVTwQG4R1A8JgDhDLGWh7nLAQ1413QKQMTcE4kxCG04KvcYIDFagyfb5NurjfcfQ==}
@@ -803,6 +813,9 @@ packages:
 
   fast-levenshtein@2.0.6:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
+
+  fast-sort@3.4.0:
+    resolution: {integrity: sha512-c/cMBGA5mH3OYjaXedtLIM3hQjv+KuZuiD2QEH5GofNOZeQVDIYIN7Okc2AW1KPhk44g5PTZnXp8t2lOMl8qhQ==}
 
   fastq@1.17.1:
     resolution: {integrity: sha512-sRVD3lWVIXWg6By68ZN7vho9a1pQcN/WBFaAAsDDFzlJjvoGx0P8z7V1t72grFJfJhu3YPZBuu25f7Kaw2jN1w==}
@@ -1722,6 +1735,8 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
+  '@magicdawn/finder-sort@0.3.4': {}
+
   '@magicdawn/prettier-config@0.0.3': {}
 
   '@nodelib/fs.scandir@2.1.5':
@@ -2278,6 +2293,8 @@ snapshots:
   fast-json-stable-stringify@2.1.0: {}
 
   fast-levenshtein@2.0.6: {}
+
+  fast-sort@3.4.0: {}
 
   fastq@1.17.1:
     dependencies:
