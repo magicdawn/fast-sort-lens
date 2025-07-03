@@ -1,34 +1,9 @@
 {
   "name": "fast-sort-lens",
   "version": "0.0.3",
+  "packageManager": "pnpm@10.12.4+sha512.5ea8b0deed94ed68691c9bad4c955492705c5eeb8a87ef86bc62c74a26b037b08ff9570f108b2e4dbd1dd1a9186fea925e527f141c648e85af45631074680184",
   "description": "API wrapper around fast-sort",
-  "type": "commonjs",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
-    }
-  },
-  "files": [
-    "dist/"
-  ],
-  "scripts": {
-    "test": "vitest run",
-    "prepare": "husky",
-    "test:dev": "vitest",
-    "test-cover": "vitest run --coverage",
-    "dev": "tsup --watch",
-    "build": "tsup",
-    "prepublishOnly": "npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/magicdawn/fast-sort-lens.git"
-  },
+  "type": "module",
   "keywords": [
     "sort",
     "order-by",
@@ -37,42 +12,68 @@
     "fast-sort-wrapper",
     "finder-sort"
   ],
-  "author": "magicdawn",
   "license": "MIT",
+  "homepage": "https://github.com/magicdawn/fast-sort-lens#readme",
   "bugs": {
     "url": "https://github.com/magicdawn/fast-sort-lens/issues"
   },
-  "homepage": "https://github.com/magicdawn/fast-sort-lens#readme",
-  "packageManager": "pnpm@10.7.0+sha512.6b865ad4b62a1d9842b61d674a393903b871d9244954f652b8842c2b553c72176b278f64c463e52d40fff8aba385c235c8c9ecf5cc7de4fd78b8bb6d49633ab6",
-  "devDependencies": {
-    "@magicdawn/finder-sort": "^0.4.0",
-    "@magicdawn/prettier-config": "^0.0.4",
-    "@swc/core": "^1.11.13",
-    "@types/node": "^22.13.14",
-    "@typescript-eslint/eslint-plugin": "^8.28.0",
-    "@typescript-eslint/parser": "^8.28.0",
-    "@vitest/coverage-v8": "^3.0.9",
-    "eslint": "^9.23.0",
-    "eslint-config-prettier": "^10.1.1",
-    "husky": "^9.1.7",
-    "lint-staged": "^15.5.0",
-    "prettier": "^3.5.3",
-    "tsup": "^8.4.0",
-    "typescript": "^5.8.2",
-    "vitest": "^3.0.9"
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/magicdawn/fast-sort-lens.git"
+  },
+  "author": "magicdawn",
+  "files": [
+    "dist/"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "lint-staged": {
-    "**/*": [
-      "prettier --write --ignore-unknown"
-    ],
-    "*.{js,jsx,ts,tsx,less,md}": [
-      "prettier --write"
-    ]
+  "scripts": {
+    "test": "vitest run",
+    "prepare": "husky",
+    "test:dev": "vitest",
+    "test-cover": "vitest run --coverage",
+    "dev": "tsdown --watch",
+    "build": "tsdown",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "fast-sort": "^3.4.1"
+  },
+  "devDependencies": {
+    "@magicdawn/eslint-config": "^1.5.6",
+    "@magicdawn/finder-sort": "^0.4.0",
+    "@magicdawn/prettier-config": "^0.1.0",
+    "@swc/core": "^1.12.9",
+    "@types/node": "^24.0.10",
+    "@typescript-eslint/eslint-plugin": "^8.35.1",
+    "@typescript-eslint/parser": "^8.35.1",
+    "@vitest/coverage-v8": "^3.2.4",
+    "eslint": "^9.30.1",
+    "eslint-config-prettier": "^10.1.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.6.2",
+    "tsdown": "^0.12.9",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  },
+  "lint-staged": {
+    "*.{?(c|m)(j|t)s?(x),json,y?(a)ml}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "!*.{?(c|m)(j|t)s?(x),json,y?(a)ml}": [
+      "prettier --write --ignore-unknown"
+    ]
   }
 }
