@@ -1,6 +1,6 @@
 import { createFinderSortKeyComparator, getFinderSortKey } from '@magicdawn/finder-sort'
 import { describe, expect, it } from 'vitest'
-import { fastOrderBy, fastSortWithOrders } from '../src'
+import { fastOrderBy, fastSortWithRules } from '../src'
 
 const list = [
   { id: 1, name: 'a' },
@@ -30,9 +30,9 @@ describe('_.orderBy spec', () => {
   })
 })
 
-describe('fastSortWithOrders spec', () => {
+describe('fastSortWithRules spec', () => {
   it('it works', () => {
-    expect(fastSortWithOrders(list, [{ prop: 'id', order: 'asc' }])).toEqual([
+    expect(fastSortWithRules(list, [{ prop: 'id', order: 'asc' }])).toEqual([
       { id: 1, name: 'a' },
       { id: 1, name: 'c' },
       { id: 2, name: 'b' },
@@ -41,7 +41,7 @@ describe('fastSortWithOrders spec', () => {
     ])
 
     expect(
-      fastSortWithOrders(list, [
+      fastSortWithRules(list, [
         { prop: 'id', order: 'desc' },
         { prop: 'name', order: 'desc' },
       ]),
@@ -63,7 +63,7 @@ describe('fastSortWithOrders spec', () => {
     ]
 
     {
-      const sorted = fastSortWithOrders(list, [
+      const sorted = fastSortWithRules(list, [
         {
           prop: (item) => getFinderSortKey(item.file),
           order: createFinderSortKeyComparator('zh-CN'),
@@ -79,7 +79,7 @@ describe('fastSortWithOrders spec', () => {
     }
 
     {
-      const sorted = fastSortWithOrders(list, [
+      const sorted = fastSortWithRules(list, [
         {
           prop: (item) => getFinderSortKey(item.file, true),
           order: createFinderSortKeyComparator('zh-CN'),

@@ -1,17 +1,15 @@
 import { sort } from 'fast-sort'
-
 export { sort } from 'fast-sort'
 
-export type OrderBy<T> = {
+export type FastSortRule<T> = {
   prop: keyof T | ((it: T) => any)
   order: 'asc' | 'desc' | ((a: any, b: any) => number)
 }
 
 /**
- * just like lodash.orderBy API spec
+ * just like _.orderBy API spec, (_: lodash / es-toolkit)
  */
-
-export function fastOrderBy<T>(list: T[], props: OrderBy<T>['prop'][], orders: OrderBy<T>['order'][]) {
+export function fastOrderBy<T>(list: T[], props: FastSortRule<T>['prop'][], orders: FastSortRule<T>['order'][]) {
   if (props.length !== orders.length) {
     throw new Error('props & orders length not match')
   }
@@ -26,8 +24,8 @@ export function fastOrderBy<T>(list: T[], props: OrderBy<T>['prop'][], orders: O
   return sort(list).by(_by)
 }
 
-export function fastSortWithOrders<T>(list: T[], orders: OrderBy<T>[]) {
-  const _by = orders.map(({ order, prop }) => {
+export function fastSortWithRules<T>(list: T[], rules: FastSortRule<T>[]) {
+  const _by = rules.map(({ order, prop }) => {
     if (order === 'asc') return { asc: prop }
     else if (order === 'desc') return { desc: prop }
     return { asc: prop, comparer: order }
