@@ -19,12 +19,67 @@ $ pnpm add fast-sort-lens
 ## API
 
 ```ts
-import { fastOrderBy, fastSortWithOrders } from 'fast-sort-lens'
+import { fastOrderBy, fastSortWithRules } from 'fast-sort-lens'
+```
+
+### `fastOrderBy`
+
+just like lodash.orderBy or `es-toolkit.orderBy` API spec.
+
+```ts
+const list = [
+  { id: 1, name: 'a' },
+  { id: 1, name: 'c' },
+  { id: 2, name: 'b' },
+  { id: 3, name: 'c' },
+  { id: 3, name: 'a' },
+]
+
+expect(fastOrderBy(list, ['id', 'name'], ['desc', 'desc'])).toEqual([
+  { id: 3, name: 'c' },
+  { id: 3, name: 'a' },
+  { id: 2, name: 'b' },
+  { id: 1, name: 'c' },
+  { id: 1, name: 'a' },
+])
+```
+
+### `fastSortWithRules`
+
+```ts
+const list = [
+  { id: 1, name: 'a' },
+  { id: 1, name: 'c' },
+  { id: 2, name: 'b' },
+  { id: 3, name: 'c' },
+  { id: 3, name: 'a' },
+]
+
+expect(fastSortWithRules(list, [{ prop: 'id', order: 'asc' }])).toEqual([
+  { id: 1, name: 'a' },
+  { id: 1, name: 'c' },
+  { id: 2, name: 'b' },
+  { id: 3, name: 'c' },
+  { id: 3, name: 'a' },
+])
+
+expect(
+  fastSortWithRules(list, [
+    { prop: 'id', order: 'desc' },
+    { prop: 'name', order: 'desc' },
+  ]),
+).toEqual([
+  { id: 3, name: 'c' },
+  { id: 3, name: 'a' },
+  { id: 2, name: 'b' },
+  { id: 1, name: 'c' },
+  { id: 1, name: 'a' },
+])
 ```
 
 ## Changelog
 
-[CHANGELOG.md](CHANGELOG.md)
+See [Releases](https://github.com/magicdawn/fast-sort-lens/releases)
 
 ## License
 
